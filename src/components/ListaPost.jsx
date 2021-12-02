@@ -7,12 +7,12 @@ const ListaPost = ({ url }) => {
 
   useEffect(() => {
     busca(url, setPosts);
-  }, []);
+  }, [url]);
 
   return (
     <section className="posts container">
       {posts.map((post) => (
-        <Link
+        <Link key={post.id}
           className={`cartao-post cartao-post--${post.categoria}`}
           to={`/posts/${post.id}`}
         >
